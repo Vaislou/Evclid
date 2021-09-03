@@ -80,6 +80,16 @@ img {
     color:#FFFFFF;
 }
 
+.btn:hover,
+.btn:focus {
+    background: rgba(255, 153, 0, 0.7);
+    outline: unset;
+}
+
+.btn:active {
+    background: #E1670E;
+}
+
 .about__grid-wrapper__btn {
     padding: 17px 35px;
     border: 3px solid var(--main-color);
@@ -102,6 +112,27 @@ img {
     color: #333333;
     background: unset;
     border: 1px solid #333333;
+}
+
+.how__info-btn__contract:hover,
+.how__info-btn__contract:focus {
+    background: #666666;
+    color: #FFFFFF;
+    outline: unset;
+}
+
+.how__info-btn__contract:active {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.footer__form-btn {
+    margin-right: 22px;
+    padding: 19px 52px;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    cursor: pointer;
 }
 
 /* Header */
@@ -152,11 +183,36 @@ img {
     font-weight: 600;
 }
 
+.nav__link:hover {
+    border-bottom: 2px solid var(--main-color);
+}
+
+.nav__link:focus {
+    outline: 2px solid var(--main-color);
+}
+
+.nav__link:active {
+    outline: unset;
+    color: var(--main-color);
+}
+
 .nav__search {
     display: block;
     width: 24px;
     height: 24px;
     background: url(/icons/search.svg) center center / cover no-repeat;
+}
+
+.nav__search:hover {
+    background: url(/icons/search_hover.svg) center center / cover no-repeat;
+}
+
+.nav__search:focus {
+    outline: 2px solid var(--main-color);
+}
+
+.nav__search:active {
+    background: url(/icons/search_hover.svg) center center / cover no-repeat;
 }
 
 /* Promo */
@@ -315,6 +371,19 @@ img {
     font-weight: 400;
 }
 
+.how__link:hover {
+    color: var(--main-color);
+}
+
+.how__link:focus {
+    outline: 2px solid var(--main-color);
+}
+
+.how__link:active {
+    outline: unset;
+    color: #E1670E;
+}
+
 .how__link:not(:last-child) {
     margin-right: 82px;
 }
@@ -377,6 +446,20 @@ img {
 .faq__item {
     padding: 31px 0;
     border-bottom: 1px solid #CACACA;
+}
+
+.faq__item:hover {
+    border-color: var(--main-color);
+    color: var(--main-color);
+}
+
+.faq__item:hover .faq__icon {
+    background-color: var(--main-color);
+}
+
+.faq__item:hover .faq__icon::before,
+.faq__item:hover .faq__icon::after {
+    background-color: #FFFFFF;
 }
 
 .faq__item-first {
@@ -471,6 +554,15 @@ img {
     color: #CACACA;
 }
 
+.footer__nav__link:hover {
+    border-bottom: none;
+    color: var(--main-color);
+}
+
+.footer__nav__link:active {
+    color: #E1670E;
+}
+
 .footer__social {
     margin-top: 90px;
     display: flex;
@@ -478,9 +570,48 @@ img {
 }
 
 .footer__social-item {
-    max-width: 60px;
-    max-height: 60px;
-    object-fit: cover;
+    width: 60px;
+    height: 60px;
+}
+
+.footer__social-item:focus {
+    outline: 2px solid var(--main-color);
+}
+
+.footer__social-item:nth-child(1) {
+    background: url('/icons/facebook.svg') center center / cover no-repeat;
+}
+
+.footer__social-item:nth-child(1):hover {
+    background: url('/icons/facebook_hover.svg') center center / cover no-repeat;
+}
+
+.footer__social-item:nth-child(1):active {
+    background: url('/icons/facebook_active.svg') center center / cover no-repeat;
+}
+
+.footer__social-item:nth-child(2) {
+    background: url('/icons/vk.svg') center center / cover no-repeat;
+}
+
+.footer__social-item:nth-child(2):hover {
+    background: url('/icons/vk_hover.svg') center center / cover no-repeat;
+}
+
+.footer__social-item:nth-child(2):active {
+    background: url('/icons/vk_active.svg') center center / cover no-repeat;
+}
+
+.footer__social-item:nth-child(3) {
+    background: url('/icons/instagram.svg') center center / cover no-repeat;
+}
+
+.footer__social-item:nth-child(3):hover {
+    background: url('/icons/instagram_hover.svg') center center / cover no-repeat;
+}
+
+.footer__social-item:nth-child(3):active {
+    background: url('/icons/instagram_active.svg') center center / cover no-repeat;
 }
 
 .footer__form-title {
@@ -521,16 +652,22 @@ img {
     color: #CACACA;
 }
 
+.input::placeholder,
+.textarea::placeholder {
+    color: #CACACA;
+}
+
+.input:hover,
+.input:focus,
+.textarea:hover,
+.texarea:focus {
+    background: #666666;
+    outline: unset;
+}
+
 .form__submit {
     display: flex;
     align-items: center;
-}
-
-.footer__form-btn {
-    margin-right: 22px;
-    padding: 19px 52px;
-    font-size: 16px;
-    line-height: 20px;
 }
 
 .checkbox__label {
