@@ -145,6 +145,14 @@ img {
     padding: 14px 0;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 10;
 }
 
 .hamburger__item {
@@ -153,14 +161,54 @@ img {
     height: 3px;
     background-color: #333333;
     margin-bottom: 7px;
+    transition: 0.3s width linear;
 }
 
-.hamburger {
-    display: none;
+.hamburger_active .hamburger__item {
+    background-color: #E1670E;
+}
+
+.hamburger_active .hamburger__item:nth-child(2) {
+    width: 25px;
+}
+
+.hamburger_active .hamburger__item:last-child {
+    width: 18px;
 }
 
 .hamburger__item:last-child {
     margin-bottom: 0;
+}
+
+.hamburger__menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    padding-top: 165px;
+    width: 45%;
+    height: 809px;
+    transform: translateX(-200%);
+    transition: transform 0.3s linear;
+    background: #FFFFFF;
+    z-index: 9;
+}
+
+.hamburger__menu_active {
+    transform: unset;
+}
+
+.hamburger__list {
+    z-index: 8;
+    list-style-type: none;
+    width: 100%;
+}
+
+.hamburger__list-item {
+    margin-bottom: 60px;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 700;
 }
 
 .logo {
@@ -246,6 +294,7 @@ img {
     position: relative;
     padding: 102px 853px 100px 80px;
     background: url('/img/first_slide.jpg') center center / cover no-repeat;
+    transition: background 0.5s ease-out;
 }
 
 .promo__title {
@@ -390,6 +439,9 @@ img {
     font-size: 18px;
     line-height: 22px;
     font-weight: 400;
+    border: none;
+    background: unset;
+    cursor: pointer;
 }
 
 .how__link:hover {
@@ -409,8 +461,16 @@ img {
     margin-right: 82px;
 }
 
-.how__link-active {
+.how__link_active {
     color: #E1670E;
+}
+
+.how__link_active:focus {
+    outline: unset;
+}
+
+.how__link_active:hover {
+    color:#E1670E;
 }
 
 .how__grid {
@@ -470,28 +530,28 @@ img {
     cursor: pointer;
 }
 
-.faq__item:hover {
+.faq__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq__wrapper:hover {
     border-color: var(--main-color);
     color: var(--main-color);
 }
 
-.faq__item:hover .faq__icon {
+.faq__wrapper:hover .faq__icon {
     background-color: var(--main-color);
 }
 
-.faq__item:hover .faq__icon::before,
-.faq__item:hover .faq__icon::after {
+.faq__wrapper:hover .faq__icon::before,
+.faq__wrapper:hover .faq__icon::after {
     background-color: #FFFFFF;
 }
 
 .faq__item-first {
     border-top: 1px solid #CACACA;
-}
-
-.faq__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .faq__title {
@@ -518,6 +578,7 @@ img {
     width: 31px;
     height: 1px;
     background-color: #666666;
+    transition: 0.1s transform ease;
 }
 
 .faq__icon::after {
@@ -529,6 +590,20 @@ img {
     width: 1px;
     height: 31px;
     background-color: #666666;
+    transition: 0.1s transform ease;
+}
+
+.faq__icon_close::before {
+    top: 50%;
+    left: 20%;
+    transform: rotate(-45deg);
+
+}
+
+.faq__icon_close::after {
+    top: 20%;
+    left: 50%;
+    transform: rotate(-45deg);
 }
 
 .faq__descr {
@@ -758,8 +833,12 @@ img {
     }
 
     .hamburger {
-        display: block;
+        display: flex;
         cursor: pointer;
+    }
+
+    .hamburger__menu {
+        display: block;
     }
 
     .logo {
@@ -986,6 +1065,19 @@ img {
         padding: 17px 0;
     }
 
+    .hamburger__menu {
+        padding-top: 78px;
+        left: 14px;
+        height: 385px;
+        width: 100%;
+    }
+
+    .hamburger__list-item {
+        margin-bottom: 32px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
     .section {
         margin-bottom: 60px;
     }
@@ -1136,6 +1228,7 @@ img {
 
     .faq__icon {
         min-width: 30px;
+        max-width: 30px;
         height: 30px;
     }
 
