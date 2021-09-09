@@ -52,7 +52,7 @@
                 </ul>
             </nav>
 
-            <a href="#" class="header__search nav__search"></a>
+            <a href="#" class="header__search nav__search" aria-label="Поиск"></a>
         </div>
     </header>
 
@@ -329,15 +329,15 @@
             <div class="footer__column footer__column_second">
                 <h2 class="footer__form-title">Оставить заявку</h2>
                 <form action="https://jsonplaceholder.typicode.com/posts" class="form" method="POST">
-                    <input type="text" required name="name" placeholder="Фамилия, имя и отчество*" class="input" id="name">
-                    <input type="email" required name="email" placeholder="E-mail*" class="input">
-                    <textarea name="textarea" id="textarea" class="textarea" required placeholder="Сообщение"></textarea>
+                    <input type="text" required name="name" placeholder="Фамилия, имя и отчество*" class="input" id="name" aria-label="Поле ввода ФИО">
+                    <input type="email" required name="email" placeholder="E-mail*" class="input" aria-label="Поле ввода email">
+                    <textarea name="textarea" id="textarea" class="textarea" required placeholder="Сообщение" aria-label="Поле ввода соображения"></textarea>
                     <div class="form__submit">
                         <button class="btn footer__form-btn" type="submit">Отправить данные</button>
-                        <div class="form__checkbox">
-                            <input type="checkbox" id="checkbox" name="checkbox" checked required>
-                            <label class="checkbox__label" for="checkbox">Согласен на обработку данных</label>
-                        </div>
+                        <label class="form__checkbox"> Согласен на обработку данных
+                            <input type="checkbox" id="checkbox" name="checkbox" checked="checked" required class="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
                     </div>
                 </form>
             </div>
